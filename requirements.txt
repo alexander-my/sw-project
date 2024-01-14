@@ -1,0 +1,5 @@
+Flask==2.0.1
+clickhouse_driver
+pandas
+requests
+Werkzeug==2.0.1
