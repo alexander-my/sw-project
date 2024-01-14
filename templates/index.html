@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Навигационное меню</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/show_data/people">People</a></li>
+                <li><a href="/show_data/films">Films</a></li>
+                <li><a href="/show_data/starships">Starships</a></li>
+                <li><a href="/show_data/vehicles">Vehicles</a></li>
+                <li><a href="/show_data/species">Species</a></li>
+                <li><a href="/show_data/planets">Planets</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="buttons">
+    <button id="fetchBtn" class="buttons">Fetch Data</button>
+</div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#fetchBtn").click(function() {
+                $.get('/fetch_data', function(data) {
+                    alert(data); // Оповещение об успешном выполнении операции
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
