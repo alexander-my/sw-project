@@ -1,6 +1,6 @@
 ToDo:
-1. Dockerfile
-2. Dockerfile for creation database
+1. Dockerfile ✅
+2. Dockerfile for creation database ✅
 3. Ansble for autocreation containers
 4. Ci/Cd pipeline
 ----------------------------------------
