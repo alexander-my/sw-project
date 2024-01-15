@@ -20,8 +20,11 @@ COPY . /app/
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 
+# Делаем entrypoint.sh исполняемым
+RUN chmod +x /app/entrypoint.sh
+
 # Открываем порт 5000
 EXPOSE 5000
 
-# Запускаем приложение Flask
-CMD ["flask", "run"]
+# Определяем скрипт entrypoint.sh как точку входа
+ENTRYPOINT ["/app/entrypoint.sh"]
