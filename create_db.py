@@ -1,7 +1,7 @@
 from clickhouse_driver import Client
 
 # Установка соединения с ClickHouse
-client = Client('127.0.0.1')
+client = Client('clickhouse')
 
 # Создание БД starwars
 client.execute('CREATE DATABASE IF NOT EXISTS starwars')

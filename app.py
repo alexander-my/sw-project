@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 # Функция для подключения к ClickHouse и выполнения запроса
 def get_table_data(table_name):
-    connection = clickhouse_driver.connect(host='127.0.0.1', database='starwars', user='default', password='')
+    connection = clickhouse_driver.connect(host='clickhouse', database='starwars', user='default', password='')
     cursor = connection.cursor()
     cursor.execute(f'SELECT * FROM {table_name}_table')
     data = cursor.fetchall()
@@ -25,7 +25,7 @@ def render_template_page(template_name, table_name):
 
 #Блок записи данных из истоника в clickhouse
 def fetch_api_data():
-    client = Client('127.0.0.1')
+    client = Client('clickhouse')
     ###########################################
     ###############Starships###################
     ###########################################
