@@ -1,0 +1,33 @@
+---
+- name: Clone the repository
+  git:
+    repo: https://github.com/alexander-my/sw-project.git
+    dest: /opt/sw-project
+  tags: clone_repo
+
+- name: Start docker-compose
+  command: docker-compose up -d
+  args:
+    chdir: /opt/sw-project
+  tags: start_docker_compose
+
+- name: Wait for 20 seconds
+  pause:
+    seconds: 20
+  tags: wait_20_seconds
+
+- name: Check status on port 5001
+  wait_for:
+    host: localhost
+    port: 5001
+    state: started
+    timeout: 60
+  tags: check_status_5001
+
+- name: Check ClickHouse status on port 9000
+  wait_for:
+    host: localhost
+    port: 9000
+    state: started
+    timeout: 60
+  tags: check_status_clickhouse

@@ -1,0 +1,6 @@
+---
+- name: Apply my_app role
+  hosts: 127.0.0.1
+  become: true
+  roles:
+    - my_app

@@ -11,3 +11,5 @@ ToDo:
 7. Logs collecting
 8. Trivi
 9. Sonarqube 
+
+ansible-playbook -i inventory.yaml main.yaml --ask-become-pass 
